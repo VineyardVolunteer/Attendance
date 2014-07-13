@@ -1,0 +1,67 @@
+﻿@model MvcApplication1.Models.AttendanceList
+@{
+    ViewBag.Title = "Attendance Data";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Enter Attendance Data here...</h2>
+
+@using (Html.BeginForm())
+{
+
+   <table>      
+          @for(int i = 0; i < Model.Count; i++)
+          {
+              <tr>
+                  <td>
+              @Html.HiddenFor(m => m[i].wsid)
+                      </td>
+                  <td>
+              <label>@Model[i].EventName</label>
+                      </td>
+                  <td>
+                      <label>@Model[i].starttime.Substring(0,5)</label>
+                      @Html.HiddenFor(m => m[i].starttime)
+                  </td>
+                  <td>
+                 <td>
+                     <label>@Model[i].attendancedate.Substring(0,9)</label>
+                 @Html.HiddenFor(m => m[i].attendancedate)
+                 </td>
+                  <td>
+                      @Html.TextBoxFor(m => m[i].attendancecount, new { maxlength = 20 })
+                  </td>
+                  <td>
+                      @Html.TextBoxFor(m => m[i].notes, new { maxlength = 50 })
+                  </td>
+              </tr>
+        @Html.HiddenFor(m => m[i].attendanceid)
+          }
+    </table>
+<button type="submit" id="btnSave" name="Save" value="Save">Save/Update Attendance</button>
+}
+
+@using (Html.BeginForm())
+{
+    <table>      
+         @* @for(int i = 0; i < Model.Count; i++)
+          {
+              *@
+        <tr>
+                  <td>
+               @Html.HiddenFor(m => m[0].attendanceid)
+                      </td>
+                  <td>
+                     Delete attendance counts for this date?<label>@Model[0].attendancedate.Substring(0,9)</label>
+                 @Html.HiddenFor(m => m[0].attendancedate)
+                 </td>
+                  </tr>
+         @* }*@
+                  </table>
+    <button type="submit" id="btnDelete" name="Delete" value="DeleteAttendance">Delete Attendance Record</button>
+}
+
+<br/>
+   
+    <a href="/Home/Index" style="width:100px;height:50px;background-color:#d3dce0; border:1px solid black; padding:5px 50px 5px 50px; text-decoration:none;"  >Back</a>
+

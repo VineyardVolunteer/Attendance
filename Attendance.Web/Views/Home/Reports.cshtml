@@ -1,0 +1,51 @@
+﻿@model MvcApplication1.Models.Reports
+
+@{
+    ViewBag.Title = "Reports";
+}
+
+<hgroup class="title">
+    <h1>@ViewBag.Title: </h1>
+    <h2>@ViewBag.Message</h2>
+</hgroup>
+
+
+
+<article>
+    <ol class="round">
+    <li class="one">
+        <h5><a href="~/Reports/ReportsGrid.aspx" >Basic Attendance Grid Listing</a></h5><br />
+    </li>
+    <li class="two">
+        <h5><a href="~/Reports/ReportsMain.aspx" >Total Tri-County Auditorium (previous 52 weeks)</a></h5><br />
+    </li>
+        <li>
+            <li class="three">
+                <h5><a href="~/Reports/ReportsDLEarly.aspx" >Total Tri-County DiscoveryLand Early (previous 52 weeks)</a></h5><br />     
+        </li>
+        <li>
+            <li class="four">
+                <h5><a href="~/Reports/ReportsDLElem.aspx" >Total Tri-County DiscoveryLand Elementary (previous 52 weeks)</a></h5><br />     
+        </li>
+        <li>
+            <li class="four">
+                <h5><a href="~/Reports/ReportsSUMid.aspx" >Total Tri-County Student Union Middle School (previous 52 weeks)</a></h5><br />     
+        </li>
+</ol>
+        
+</article>
+
+<aside>
+    <h3>Quick Links</h3>
+    <ul>
+        <li>@Html.ActionLink("Home", "Index", "Home")</li>
+        <li>@Html.ActionLink("Reports", "Reports", "Home")</li>
+        <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+    </ul>
+</aside>
+
+@Scripts.Render("~/bundles/modernizr")
+@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/bundles/jqueryui")
+
+

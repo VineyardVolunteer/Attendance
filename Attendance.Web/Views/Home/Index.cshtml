@@ -1,0 +1,65 @@
+﻿@model MvcApplication1.Models.Attendance
+
+
+@{
+    ViewBag.Title = "Welcome";
+}
+@section featured {
+    <section class="featured">
+        <div class="content-wrapper">
+            <hgroup class="title">
+                <h1>@ViewBag.Title</h1>
+                <h2>@ViewBag.Message</h2>
+            </hgroup>
+            <p>
+                NEW... This is a new possibility for online attendance recording and reporting application, and obviously it is <mark>still in development.</mark><br />
+                The goal of this project is to take the Vineyard Church Attendance records from a static
+                Excel spreadsheet to a dynamic online application, allowing users to enter their weekend 
+                celebration attendance counts here.  This would allow for data to be uploaded and compiled
+                immediately (even Sunday afternoon) and give Senior Leadership a more efficient look at 
+                weekend attendance intelligence.
+                </p>
+     
+           
+            @using (Html.BeginForm())
+            {
+                @Html.ValidationSummary("Oops!")
+
+            <label id="Date">Date:</label>
+                                   
+               @Html.TextBoxFor(m => Model.attendancedate, new{@id ="txtDate",@class = "datefield" })
+                     @Html.DropDownListFor(m => m.locationid, new SelectList(Model.Location,"locationid","locationname"),"Select Location ---")
+                     <input type="submit" value="Next" />                   
+            }
+
+        </div>
+    </section>
+}
+<h3>Goals:</h3>
+<ol class="round">
+    <li class="one">
+        <h5>Reporting Features</h5>
+        The goal here is to give some charting options - providing a graphic depiction of attendance data.
+    </li>
+    <li class="two">
+        <h5>Log In control for users</h5>
+        This would allow security for users with different levels of permissions - could possibly be tied in to MyVineyard log-ins.
+    </li>
+    <li class="three">
+        <h5>Timely Information</h5>
+        The goal would be to allow users to check the online application anytime (maybe Saturday evening or Sunday afternoon) to see 'close to real time' attendance data, without guessing or waiting.
+    </li>
+</ol>
+@Scripts.Render("~/bundles/modernizr")
+@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/bundles/jqueryui")
+
+
+@section Scripts{
+    @*@Scripts.Render("~/bundles/jqueryval")*@
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $(".datefield").datepicker();
+        });
+    </script>
+}
