@@ -1,11 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
 
-namespace MvcApplication1.Reports
+namespace Attendance.Web.Reports
 {
     public partial class ReportsGrid : System.Web.UI.Page
     {

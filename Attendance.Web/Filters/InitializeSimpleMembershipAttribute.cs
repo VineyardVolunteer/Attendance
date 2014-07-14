@@ -3,10 +3,10 @@ using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
 using System.Threading;
 using System.Web.Mvc;
+using Attendance.Web.Models;
 using WebMatrix.WebData;
-using MvcApplication1.Models;
 
-namespace MvcApplication1.Filters
+namespace Attendance.Web.Filters
 {
     [AttributeUsage(AttributeTargets.Class | AttributeTargets.Method, AllowMultiple = false, Inherited = true)]
     public sealed class InitializeSimpleMembershipAttribute : ActionFilterAttribute

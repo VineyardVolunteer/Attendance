@@ -1,12 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Data;
-using System.Data.SqlClient;
-using MvcApplication1.Models;
+using Attendance.Web.DAL;
+using Attendance.Web.Models;
 
-namespace MvcApplication1.BLL
+namespace Attendance.Web.BLL
 {
     /// <summary>
     /// this holds the odd lists or classes that don't need its own class

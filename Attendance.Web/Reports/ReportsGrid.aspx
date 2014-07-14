@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ReportsGrid.aspx.cs" Inherits="MvcApplication1.Reports.ReportsGrid" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ReportsGrid.aspx.cs" Inherits="Attendance.Web.Reports.ReportsGrid" %>
 
 <%@ Register assembly="System.Web.DataVisualization, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" namespace="System.Web.UI.DataVisualization.Charting" tagprefix="asp" %>
 <%@ Register assembly="Microsoft.ReportViewer.WebForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" namespace="Microsoft.Reporting.WebForms" tagprefix="rsweb" %>

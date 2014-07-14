@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
-using MvcApplication1.Models;
+﻿using System.Web.Mvc;
+using Attendance.Web.Models;
 
-namespace MvcApplication1.Controllers
+namespace Attendance.Web.Controllers
 {
     public class HomeController : Controller
     {
@@ -13,7 +9,7 @@ namespace MvcApplication1.Controllers
         {
             ViewBag.Message = "to VARI - Vineyard Attendance Reporting Index!";
 
-            Attendance a = new Attendance();
+            Models.Attendance a = new Models.Attendance();
 
             a.Location = BLL.UtilBLL.GetLocations();
 
@@ -42,7 +38,7 @@ namespace MvcApplication1.Controllers
         }
 
         [HttpPost]
-        public ActionResult Index(Attendance model = null)
+        public ActionResult Index(Models.Attendance model = null)
         {
             
             if (model.attendancedate == null)
@@ -69,7 +65,7 @@ namespace MvcApplication1.Controllers
             }
 
         [HttpGet]
-        public ActionResult Attendance(Attendance id = null)
+        public ActionResult Attendance(Models.Attendance id = null)
         {
 
             AttendanceList al = new AttendanceList();
@@ -83,7 +79,7 @@ namespace MvcApplication1.Controllers
         [HttpPost]
        public ActionResult Attendance(AttendanceList id = null)
         {
-            foreach (Attendance a in id)
+            foreach (Models.Attendance a in id)
             {
                 AttendanceList alst = new AttendanceList();
                 BLL.AttendanceBLL.SaveAttendance(a);
@@ -97,7 +93,7 @@ namespace MvcApplication1.Controllers
         public ActionResult DeleteAttendance(AttendanceList id = null)
         {
             //loop through the model and delete
-            foreach (Attendance a in id)
+            foreach (Models.Attendance a in id)
             {
                 AttendanceList alst = new AttendanceList();
                 BLL.AttendanceBLL.DeleteAttendance(a);

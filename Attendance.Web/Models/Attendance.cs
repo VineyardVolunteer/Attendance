@@ -1,15 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Linq.Expressions;
-using System.Reflection;
-using System.Web;
-using System.Web.Mvc;
-using System.Web.Mvc.Html;
 
-namespace MvcApplication1.Models
+namespace Attendance.Web.Models
 {
     public class AttendanceList : List<Attendance>
     {

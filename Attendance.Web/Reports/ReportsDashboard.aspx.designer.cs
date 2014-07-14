@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace MvcApplication1.Reports {
+namespace Attendance.Web.Reports {
     
     
     public partial class ReportsDashboard {

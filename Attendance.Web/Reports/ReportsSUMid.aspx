@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ReportsSUMid.aspx.cs" Inherits="MvcApplication1.Reports.ReportsSUMid" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ReportsSUMid.aspx.cs" Inherits="Attendance.Web.Reports.ReportsSUMid" %>
 
 <!DOCTYPE html>
 

@@ -1,12 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Data;
 using System.Data.SqlClient;
-using MvcApplication1.Models;
+using Attendance.Web.DAL;
+using Attendance.Web.Models;
 
-namespace MvcApplication1.BLL
+namespace Attendance.Web.BLL
 {
     public class AttendanceBLL
     {
@@ -40,7 +38,7 @@ namespace MvcApplication1.BLL
             return FillAttendanceClass(dtResults);
         }
 
-        public static void SaveAttendance(Attendance model)
+        public static void SaveAttendance(Models.Attendance model)
         {
             SqlParameter SQLattendanceid;
             // if the attendance id is null or 0 change the value of the parameter so the stored proc will pick it up
@@ -72,7 +70,7 @@ namespace MvcApplication1.BLL
 
             foreach (DataRow dr in dtResults.Rows)
             {
-                Attendance a = new Attendance();
+                Models.Attendance a = new Models.Attendance();
                 if (dr[3].ToString() != "")
                 {
                     a.attendanceid = Convert.ToInt32(dr[3].ToString());
@@ -95,7 +93,7 @@ namespace MvcApplication1.BLL
             return at;
         }
 
-        public static void DeleteAttendance(Attendance model)
+        public static void DeleteAttendance(Models.Attendance model)
         {
 
             SqlParameter SQLattendanceid;
